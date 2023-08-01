@@ -1,0 +1,11 @@
+[package]
+name = "krypt-cli"
+version = "0.1.0"
+edition = "2021"
+[[bin]]
+name = "krypt"
+path = "krypt.rs"
+[dependencies]
+clap = { version = "4.3.19", features = ["derive"] }
+krypt = {version = "0.1.0",path = "../../"}
+log = "0.4.19"

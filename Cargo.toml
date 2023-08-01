@@ -2,9 +2,14 @@
 name = "krypt"
 version = "0.1.0"
 edition = "2021"
+[lib]
+path = "rust/lib.rs"
+[workspace]
+members = ["rust/krypt-cli"]
 [features]
 default = ["std"]
 std = ["linux-keyutils/std"]
 [dependencies]
 linux-keyutils = "0.2.3"
 zeroize = "1.6"
+[dev-dependencies]
