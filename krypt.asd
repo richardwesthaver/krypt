@@ -7,7 +7,9 @@
   :source-control "https://lab.rwest.io/ellis/krypt"
   :license "WTF"
   :version "0.1.0"
-  :components ((:file "lisp/keyutils")))
+  :serial t
+  :components ((:file "lisp/pkg")
+	       (:file "lisp/keyutils")))
 
 (defsystem "krypt"
   :version "0.1.0"
@@ -19,9 +21,10 @@
   :source-control "https://lab.rwest.io/ellis/krypt"
   :license "WTF"
   :depends-on ("krypt/keyutils")
+  :serial t
   :components ((:file "lisp/pkg")
 	       (:file "lisp/proto")
 	       (:file "lisp/krypt")))
   
-(defmethod perform :after ((op load-op) (c (eql (find-system :sxp))))
+(defmethod perform :after ((op load-op) (c (eql (find-system :krypt))))
   (pushnew :krypt *features*))
